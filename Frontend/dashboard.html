@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - VibeKit Studio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+        <a href="/" class="dashboard-logo">
+            <i class="bi bi-palette"></i>
+            <span>VibeKit</span>
+        </a>
+
+        <ul class="dashboard-nav">
+            <li>
+                <a href="dashboard.html" class="active">
+                    <i class="bi bi-grid-1x2"></i>
+                    <span>My Pages</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" id="nav-analytics">
+                    <i class="bi bi-bar-chart"></i>
+                    <span>Analytics</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" id="nav-submissions">
+                    <i class="bi bi-envelope"></i>
+                    <span>Submissions</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="user-menu">
+            <div class="user-avatar" id="user-avatar">U</div>
+            <div class="user-info">
+                <div class="user-name" id="user-name">User</div>
+                <div class="user-email" id="user-email">user@email.com</div>
+            </div>
+            <button class="btn btn-link text-white p-0" onclick="handleLogout()" title="Logout">
+                <i class="bi bi-box-arrow-right"></i>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+        <!-- Pages View -->
+        <div id="pages-view">
+            <div class="dashboard-header">
+                <div>
+                    <h1 class="h3 fw-bold mb-1">My Pages</h1>
+                    <p class="text-muted mb-0">Create and manage your landing pages</p>
+                </div>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createPageModal">
+                    <i class="bi bi-plus-lg me-2"></i>Create New Page
+                </button>
+            </div>
+
+            <div id="pages-container">
+                <div class="text-center py-5">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Analytics View -->
+        <div id="analytics-view" style="display: none;">
+            <div class="dashboard-header">
+                <div>
+                    <h1 class="h3 fw-bold mb-1">Analytics</h1>
+                    <p class="text-muted mb-0">Track your page performance</p>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-4">
+                <div class="col-md-4">
+                    <div class="stats-card">
+                        <div class="stats-card-icon" style="background: rgba(99, 102, 241, 0.1); color: var(--primary);">
+                            <i class="bi bi-file-earmark-text"></i>
+                        </div>
+                        <div class="stats-card-value" id="stats-pages">0</div>
+                        <div class="stats-card-label">Total Pages</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stats-card">
+                        <div class="stats-card-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--success);">
+                            <i class="bi bi-eye"></i>
+                        </div>
+                        <div class="stats-card-value" id="stats-views">0</div>
+                        <div class="stats-card-label">Total Views</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stats-card">
+                        <div class="stats-card-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--warning);">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                        <div class="stats-card-value" id="stats-submissions">0</div>
+                        <div class="stats-card-label">Contact Submissions</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-card">
+                <h5 class="mb-3">Page Views by Page</h5>
+                <div id="views-by-page">
+                    <p class="text-muted">No data available yet.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Submissions View -->
+        <div id="submissions-view" style="display: none;">
+            <div class="dashboard-header">
+                <div>
+                    <h1 class="h3 fw-bold mb-1">Contact Submissions</h1>
+                    <p class="text-muted mb-0">Messages from your visitors</p>
+                </div>
+            </div>
+
+            <div class="stats-card">
+                <div id="submissions-container">
+                    <p class="text-muted">No submissions yet.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Create Page Modal -->
+    <div class="modal fade" id="createPageModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border-radius: 20px; border: none;">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold">Create New Page</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="create-page-form">
+                        <div class="mb-3">
+                            <label for="page-title" class="form-label">Page Title</label>
+                            <input type="text" class="form-control" id="page-title" placeholder="My Awesome Page" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="page-slug" class="form-label">Page URL Slug</label>
+                            <div class="input-group">
+                                <span class="input-group-text">/p/</span>
+                                <input type="text" class="form-control" id="page-slug" placeholder="my-page" required pattern="[a-z0-9-]+">
+                            </div>
+                            <div class="form-text">Only lowercase letters, numbers, and hyphens</div>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label">Choose Your Vibe</label>
+                            <div class="vibe-selector">
+                                <div class="vibe-option selected" data-vibe="minimalist">
+                                    <div class="vibe-option-preview" style="background: #ffffff; border: 1px solid #e2e8f0;"></div>
+                                    <div class="vibe-option-name">Minimalist</div>
+                                </div>
+                                <div class="vibe-option" data-vibe="bold">
+                                    <div class="vibe-option-preview" style="background: linear-gradient(135deg, #dc2626, #ea580c);"></div>
+                                    <div class="vibe-option-name">Bold</div>
+                                </div>
+                                <div class="vibe-option" data-vibe="retro">
+                                    <div class="vibe-option-preview" style="background: #fef3c7;"></div>
+                                    <div class="vibe-option-name">Retro</div>
+                                </div>
+                                <div class="vibe-option" data-vibe="glass">
+                                    <div class="vibe-option-preview" style="background: linear-gradient(135deg, #667eea, #764ba2);"></div>
+                                    <div class="vibe-option-name">Glassmorphism</div>
+                                </div>
+                                <div class="vibe-option" data-vibe="dark">
+                                    <div class="vibe-option-preview" style="background: #0f172a;"></div>
+                                    <div class="vibe-option-name">Dark Mode</div>
+                                </div>
+                                <div class="vibe-option" data-vibe="playful">
+                                    <div class="vibe-option-preview" style="background: linear-gradient(135deg, #ec4899, #8b5cf6);"></div>
+                                    <div class="vibe-option-name">Playful</div>
+                                </div>
+                            </div>
+                            <input type="hidden" id="page-vibe" value="minimalist">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 py-3">
+                            <i class="bi bi-plus-lg me-2"></i>Create Page
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
