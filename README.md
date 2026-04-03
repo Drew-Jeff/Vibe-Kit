@@ -1,10 +1,6 @@
 # Vibe-Kit
 A automatic website builder based on vibe and color choices
 
-
-***
-
-```markdown
 # 🎨 VibeKit Studio
 
 **Full Stack Vibe Coder Intern Assessment - Purple Merit**
