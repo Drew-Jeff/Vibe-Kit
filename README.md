@@ -10,7 +10,7 @@ A automatic website builder based on vibe and color choices
 VibeKit Studio is a full-stack web application that allows users to generate a design theme ("vibe"), apply it to a mini-site, and publish it to a fast, responsive public URL. 
 
 ## 🚀 Live Links
-* **Deployed Application:** [Insert your Netlify Live URL here]
+* **Deployed Application:** https://69cfede7564d01e18422150e--quiet-custard-934202.netlify.app/
 * **GitHub Repository:** [https://github.com/Drew-Jeff/Vibe-Kit](https://github.com/Drew-Jeff/Vibe-Kit)
 
 ## 🔑 Test Credentials
