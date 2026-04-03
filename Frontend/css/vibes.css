@@ -1,0 +1,573 @@
+/* VibeKit Studio - Theme Vibes */
+
+/* Base Page Styles */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.page-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.page-content {
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    font-size: 48px;
+}
+
+.profile-name {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.profile-title {
+    font-size: 18px;
+    margin-bottom: 16px;
+    opacity: 0.8;
+}
+
+.profile-bio {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.social-link {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.social-link:hover {
+    transform: scale(1.1);
+}
+
+.cta-section {
+    margin-bottom: 32px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+}
+
+.contact-form-section {
+    margin-top: 32px;
+    padding: 32px;
+    border-radius: 16px;
+}
+
+.contact-form-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.contact-form-section .form-control {
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 15px;
+}
+
+.page-footer {
+    margin-top: 48px;
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+.page-footer a {
+    text-decoration: none;
+}
+
+/* ============================================
+   VIBE 1: MINIMALIST
+   Clean, lots of whitespace, simple elegance
+   ============================================ */
+.vibe-minimalist {
+    background: #ffffff;
+    color: #1e293b;
+}
+
+.vibe-minimalist .profile-avatar {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.vibe-minimalist .profile-title {
+    color: #64748b;
+}
+
+.vibe-minimalist .profile-bio {
+    color: #475569;
+}
+
+.vibe-minimalist .social-link {
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+.vibe-minimalist .social-link:hover {
+    background: #e2e8f0;
+}
+
+.vibe-minimalist .cta-button {
+    background: #1e293b;
+    color: white;
+}
+
+.vibe-minimalist .cta-button:hover {
+    box-shadow: 0 10px 30px rgba(30, 41, 59, 0.3);
+}
+
+.vibe-minimalist .contact-form-section {
+    background: #f8fafc;
+}
+
+.vibe-minimalist .contact-form-section .form-control {
+    background: white;
+    border: 1px solid #e2e8f0;
+    color: #1e293b;
+}
+
+.vibe-minimalist .contact-form-section .form-control:focus {
+    border-color: #1e293b;
+    box-shadow: 0 0 0 3px rgba(30, 41, 59, 0.1);
+}
+
+.vibe-minimalist .page-footer a {
+    color: #1e293b;
+}
+
+/* ============================================
+   VIBE 2: BOLD
+   Strong colors, big typography, statement
+   ============================================ */
+.vibe-bold {
+    background: linear-gradient(135deg, #dc2626 0%, #ea580c 100%);
+    color: white;
+}
+
+.vibe-bold .profile-avatar {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.vibe-bold .profile-name {
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.vibe-bold .profile-title {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+}
+
+.vibe-bold .profile-bio {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.vibe-bold .social-link {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.vibe-bold .social-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.vibe-bold .cta-button {
+    background: white;
+    color: #dc2626;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.vibe-bold .cta-button:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.vibe-bold .contact-form-section {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.vibe-bold .contact-form-section .form-control {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.vibe-bold .contact-form-section .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.vibe-bold .contact-form-section .form-control:focus {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: white;
+    box-shadow: none;
+}
+
+.vibe-bold .page-footer,
+.vibe-bold .page-footer a {
+    color: white;
+}
+
+/* ============================================
+   VIBE 3: RETRO
+   Vintage vibes, warm colors, classic feel
+   ============================================ */
+.vibe-retro {
+    background: #fef3c7;
+    color: #78350f;
+    font-family: 'Georgia', serif;
+}
+
+.vibe-retro .profile-avatar {
+    background: #fde68a;
+    color: #92400e;
+    border: 4px solid #92400e;
+}
+
+.vibe-retro .profile-name {
+    font-family: 'Georgia', serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.vibe-retro .profile-title {
+    color: #b45309;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 14px;
+}
+
+.vibe-retro .profile-bio {
+    color: #92400e;
+}
+
+.vibe-retro .social-link {
+    background: #fde68a;
+    color: #92400e;
+    border: 2px solid #92400e;
+}
+
+.vibe-retro .social-link:hover {
+    background: #fcd34d;
+}
+
+.vibe-retro .cta-button {
+    background: #92400e;
+    color: #fef3c7;
+    border-radius: 4px;
+}
+
+.vibe-retro .cta-button:hover {
+    box-shadow: 4px 4px 0 #78350f;
+}
+
+.vibe-retro .contact-form-section {
+    background: #fde68a;
+    border: 2px solid #92400e;
+    border-radius: 4px;
+}
+
+.vibe-retro .contact-form-section .form-control {
+    background: #fef3c7;
+    border: 2px solid #92400e;
+    border-radius: 4px;
+    color: #78350f;
+}
+
+.vibe-retro .contact-form-section .form-control:focus {
+    border-color: #78350f;
+    box-shadow: 2px 2px 0 #78350f;
+}
+
+.vibe-retro .page-footer a {
+    color: #92400e;
+}
+
+/* ============================================
+   VIBE 4: GLASSMORPHISM
+   Frosted glass effect, modern gradients
+   ============================================ */
+.vibe-glass {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.vibe-glass .page-content {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border-radius: 32px;
+    padding: 48px 32px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.vibe-glass .profile-avatar {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.vibe-glass .profile-title {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.vibe-glass .profile-bio {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.vibe-glass .social-link {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.vibe-glass .social-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.vibe-glass .cta-button {
+    background: white;
+    color: #667eea;
+}
+
+.vibe-glass .cta-button:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.vibe-glass .contact-form-section {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.vibe-glass .contact-form-section .form-control {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.vibe-glass .contact-form-section .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.vibe-glass .contact-form-section .form-control:focus {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: white;
+    box-shadow: none;
+}
+
+.vibe-glass .page-footer,
+.vibe-glass .page-footer a {
+    color: white;
+}
+
+/* ============================================
+   VIBE 5: DARK MODE
+   Sleek dark theme for night owls
+   ============================================ */
+.vibe-dark {
+    background: #0f172a;
+    color: #f8fafc;
+}
+
+.vibe-dark .profile-avatar {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+}
+
+.vibe-dark .profile-title {
+    color: #94a3b8;
+}
+
+.vibe-dark .profile-bio {
+    color: #cbd5e1;
+}
+
+.vibe-dark .social-link {
+    background: #1e293b;
+    color: #f8fafc;
+}
+
+.vibe-dark .social-link:hover {
+    background: #334155;
+}
+
+.vibe-dark .cta-button {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+}
+
+.vibe-dark .cta-button:hover {
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+}
+
+.vibe-dark .contact-form-section {
+    background: #1e293b;
+}
+
+.vibe-dark .contact-form-section .form-control {
+    background: #0f172a;
+    border: 1px solid #334155;
+    color: #f8fafc;
+}
+
+.vibe-dark .contact-form-section .form-control:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.vibe-dark .page-footer a {
+    color: #6366f1;
+}
+
+/* ============================================
+   VIBE 6: PLAYFUL
+   Fun gradients, rounded shapes
+   ============================================ */
+.vibe-playful {
+    background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+    color: white;
+}
+
+.vibe-playful .profile-avatar {
+    background: #fbbf24;
+    color: #1e293b;
+    border-radius: 30%;
+    transform: rotate(-5deg);
+}
+
+.vibe-playful .profile-name {
+    font-weight: 800;
+}
+
+.vibe-playful .profile-title {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+.vibe-playful .profile-bio {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.vibe-playful .social-link {
+    background: #fbbf24;
+    color: #1e293b;
+    border-radius: 30%;
+}
+
+.vibe-playful .social-link:hover {
+    background: #fcd34d;
+    transform: scale(1.1) rotate(5deg);
+}
+
+.vibe-playful .cta-button {
+    background: #fbbf24;
+    color: #1e293b;
+    font-weight: 700;
+    border-radius: 20px;
+}
+
+.vibe-playful .cta-button:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px) rotate(-2deg);
+}
+
+.vibe-playful .contact-form-section {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+}
+
+.vibe-playful .contact-form-section .form-control {
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    border-radius: 16px;
+    color: white;
+}
+
+.vibe-playful .contact-form-section .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.vibe-playful .contact-form-section .form-control:focus {
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: none;
+}
+
+.vibe-playful .page-footer,
+.vibe-playful .page-footer a {
+    color: white;
+}
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+@media (max-width: 576px) {
+    .profile-name {
+        font-size: 28px;
+    }
+
+    .vibe-bold .profile-name {
+        font-size: 32px;
+    }
+
+    .profile-avatar {
+        width: 100px;
+        height: 100px;
+        font-size: 40px;
+    }
+
+    .social-links {
+        gap: 12px;
+    }
+
+    .social-link {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+}
